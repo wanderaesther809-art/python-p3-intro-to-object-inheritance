@@ -61,6 +61,18 @@ class Instructor(Employee):
         self.course = course
 
 
+class Trainee(Employee):
+    def __init__(
+        self, first_name, last_name, salary, gender, phone_number, contract_duration
+    ):
+        super().__init__(first_name, last_name, salary, gender, phone_number)
+
+        self.contract_duration = contract_duration
+
+    def list_trainees(self, trainee):
+        pass
+
+
 classroom_manager = Manager(
     "Bernard", "Musau", "500000", "Male", "0712345678", "Classroom"
 )
@@ -75,6 +87,10 @@ instructor2 = Instructor(
 instructor3 = Instructor(
     "Erick", "Mongare", "200000", "Male", "0712328900", "Software Engineering"
 )
+
+# create a trainee
+trainee1 = Trainee("Jeavan", "Tyson", "500", "Male", "0717643064", "3 months")
+
 
 classroom_manager.add_employee(instructor1)
 classroom_manager.add_employee(instructor2)
